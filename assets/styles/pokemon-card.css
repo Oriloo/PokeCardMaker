@@ -1,0 +1,421 @@
+:root {
+    --normal-hexa: #CDC8C4;
+    --normal-rgb: 205, 200, 196;
+    --fire-hexa: #F16542;
+    --fire-rgb: 241, 101, 66;
+    --grass-hexa: #A1C84E;
+    --grass-rgb: 161, 200, 78;
+    --water-hexa: #5B97CA;
+    --water-rgb: 91, 151, 202;
+    --lightning-hexa: #FBAE33;
+    --lightning-rgb: 251, 174, 51;
+    --fighting-hexa: #D06838;
+    --fighting-rgb: 208, 104, 56;
+    --psychic-hexa: #744B9E;
+    --psychic-rgb: 116, 75, 158;
+    --metal-hexa: #839390;
+    --metal-rgb: 131, 147, 144;
+    --dragon-hexa: #756B24;
+    --dragon-rgb: 117, 107, 36;
+    --darkness-hexa: #0D2E2A;
+    --darkness-rgb: 13, 46, 42;
+
+    --color-card: var(--normal-rgb);
+    --yellow-border: #FFE165;
+}
+
+.pokemon-card {
+
+    .border-card {
+        height: 600px;
+        aspect-ratio: 63/88;
+        border-radius: calc(600px * (35 / 1024));
+        background-color: var(--yellow-border);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        height: calc(962 / 1024 * 100%);
+        width: calc(672 / 733 * 100%);
+        border-radius: calc(600px * (10 / 962));
+        background: linear-gradient(rgba(var(--color-card), 0.8), rgba(var(--color-card), 0.8)),
+        url('../background-poke-card.png') center / cover no-repeat;
+        background-blend-mode: hard-light;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+        position: relative;
+    }
+
+    .gradient {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60%;
+        border-radius: calc(600px * (10 / 962));
+        overflow: hidden;
+
+        .gradient-filter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%),
+            linear-gradient(75deg, #A5FF7A 0%, #FFA1A0 25%, #BCE9EC 50%, #F5F2AE 75%, #FF9F9F 100%);
+            mix-blend-mode: overlay;
+        }
+    }
+
+    .card-details {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-header {
+        height: 41px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 7px;
+
+        .basic {
+            position: absolute;
+            top: 6px;
+            left: -6px;
+
+            img {
+                width: 61px;
+            }
+        }
+
+        .name {
+            margin-left: 58px;
+            font-family: 'GillSansStd', sans-serif;
+            font-size: 29px;
+            font-weight: 700;
+        }
+
+        .life {
+            margin: 0 3px 0 auto;
+            font-family: 'FuturaPT', sans-serif;
+
+            .life-text {
+                font-size: 12px;
+                font-weight: 900;
+            }
+
+            .life-value {
+                font-size: 32px;
+                font-weight: 500;
+            }
+        }
+
+        .type {
+            display: flex;
+            align-items: center;
+
+            img {
+                height: 33px;
+                aspect-ratio: 1/1;
+            }
+        }
+    }
+
+    .card-body {
+
+        .card-image {
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            .card-image-bg {
+                width: 95%;
+                aspect-ratio: 627/394;
+                background: linear-gradient(-238deg, #BDBEC0 0%, #F9FBFA 19%, #9FA3A3 66%, #F5F5F5 82%, #D9D9D9 100%);
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            img {
+                width: 98%;
+                aspect-ratio: 627/393;
+                object-fit: cover;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 93.1%;
+                aspect-ratio: 627/393;
+                box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
+                pointer-events: none;
+            }
+        }
+
+        .card-info {
+            position: relative;
+
+            .card-info-header {
+                position: relative;
+                color: #434345;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 98.5%;
+                }
+
+                .bar1-text {
+                    position: absolute;
+                    top: 2px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-family: 'GillSansStd', sans-serif;
+                    font-size: 9px;
+                    font-weight: 400;
+                    white-space: nowrap;
+                }
+            }
+
+            .card-info-body {
+                position: absolute;
+                top: 22px;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .attack {
+                    margin-bottom: 15px;
+                    padding: 0 4%;
+
+                    .attack-header {
+                        width: 362px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .attack-type {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                height: 24px;
+                                aspect-ratio: 1/1;
+                                margin-right: 2px;
+                            }
+                        }
+
+                        .attack-name, .attack-damage {
+                            font-family: 'GillSansStd', sans-serif;
+                            font-size: 22px;
+                            font-weight: 700;
+                            font-stretch: condensed;
+                        }
+                    }
+
+                    .attack-body {
+                        margin-top: 2px;
+                        line-height: 15px;
+
+                        .attack-text {
+                            font-family: 'GillSansStd', sans-serif;
+                            font-size: 15px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+
+            .card-info-footer {
+                position: absolute;
+                bottom: -284px;
+                width: 100%;
+
+                .footer-top {
+                    position: absolute;
+                    bottom: 40px;
+                    left: -2%;
+                    display: flex;
+                    color: #434345;
+
+                    .footer-top-left {
+                        position: relative;
+
+                        img {
+                            height: 22px;
+                        }
+
+                        .inside {
+                            position: absolute;
+                            top: 50%;
+                            left: 20px;
+                            transform: translateY(-63%);
+                            width: 100%;
+                            display: flex;
+
+                            .inside-right, .inside-left {
+                                display: flex;
+                                align-items: center;
+                                width: 42%;
+                                gap: 5px;
+                            }
+
+                            .text {
+                                font-family: 'GillSansStd', sans-serif;
+                                font-size: 9px;
+                                font-weight: 700;
+                                margin-top: -2px;
+                            }
+
+                            img {
+                                height: 14px;
+                                margin-top: -2px;
+                            }
+
+                            .multiplier {
+                                font-family: 'GillSansStd', sans-serif;
+                                font-size: 13px;
+                                font-weight: 700;
+                                margin: -3px 0 0 -2px;
+                            }
+
+                            .subtracter {
+                                font-family: 'GillSansStd', sans-serif;
+                                font-size: 13px;
+                                font-weight: 700;
+                                margin: -3px 0 0 -2px;
+                            }
+
+                            .value {
+                                font-family: 'GillSansStd', sans-serif;
+                                font-size: 15px;
+                                font-weight: 700;
+                                margin: 0 0 0 -3px;
+                            }
+                        }
+                    }
+
+                    .footer-top-right {
+                        margin-left: -7px;
+                        position: relative;
+
+                        img {
+                            height: 22px;
+                        }
+
+                        .inside {
+                            position: absolute;
+                            top: 50%;
+                            left: 20px;
+                            transform: translateY(-70%);
+                            display: flex;
+
+                            .text {
+                                font-family: 'GillSansStd', sans-serif;
+                                font-size: 9px;
+                                font-weight: 700;
+                                padding-right: 12px;
+                            }
+
+                            .energy {
+                                display: flex;
+                                margin-top: -2px;
+
+                                img {
+                                    height: 14px;
+                                    margin-right: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .footer-bottom {
+
+                    .footer-left {
+                        position: absolute;
+                        bottom: -5px;
+                        left: 3%;
+                        width: 50%;
+
+                        .footer-left-top {
+                            margin-bottom: 2px;
+
+                            .footer-text {
+                                font-family: 'GillSansStd', sans-serif;
+                                font-size: 10px;
+                                font-weight: 400;
+                                font-style: italic;
+                            }
+                        }
+
+                        .footer-left-bottom {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 3px;
+                            align-items: center;
+
+                            .symbol img {
+                                height: 17px;
+                            }
+
+                            .regulation {
+                                height: 15px;
+                            }
+
+                            .rarity-text {
+                                font-family: 'GillSansStd', sans-serif;
+                                font-size: 12px;
+                                font-weight: 400;
+                                font-style: italic;
+                            }
+
+                            .rarity-symbol {
+                                height: 10px;
+                            }
+                        }
+                    }
+
+                    .footer-right {
+                        position: absolute;
+                        bottom: 0;
+                        right: 3%;
+                        width: 50%;
+                        text-align: right;
+                        line-height: 12px;
+                        color: #434345;
+
+                        .footer-text {
+                            font-family: 'GillSansStd', sans-serif;
+                            font-size: 10px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .card-footer span {
+        position: absolute;
+        bottom: -13px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'GillSansStd', sans-serif;
+        font-size: 8px;
+        font-weight: 400;
+    }
+}

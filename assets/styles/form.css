@@ -1,0 +1,191 @@
+:root {
+    --primary-color: #e74c3c;
+    --secondary-color: #3498db;
+    --text-color: #2c3e50;
+    --light-gray: #ecf0f1;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-card {
+    height: 550px;
+    aspect-ratio: 63/88;
+    overflow-y: scroll;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+.form-card h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-card h3 {
+    font-size: 18px;
+    margin: 16px 0;
+}
+
+.lab-inp {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+    position: relative;
+}
+
+.lab-inp label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.lab-inp input,
+.lab-inp select,
+.lab-inp textarea {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.lab-inp input:focus,
+.lab-inp select:focus,
+.lab-inp textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+}
+
+.lab-inp textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.lab-inp input[type="number"] {
+    width: 80px;
+}
+
+.lab-inp input[type="file"] {
+    padding: 8px;
+    background-color: transparent;
+    border: 1px dashed #ccc;
+}
+
+.lab-inp input[type="file"]:hover {
+    border-color: var(--primary-color);
+}
+
+.lab-inp select {
+    cursor: pointer;
+    appearance: none;
+    padding-right: 32px;
+}
+
+.btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+button#load {
+    background-color: var(--secondary-color);
+}
+
+button#load:hover {
+    background-color: #2980b9;
+}
+
+button#save, button#export, .add-energy-btn {
+    background-color: #2ecc71;
+}
+
+button#save:hover, button#export:hover, .add-energy-btn:hover {
+    background-color: #27ae60;
+}
+
+.energy-select-container {
+    margin-bottom: 8px;
+
+    button {
+        padding: 11px 12px;
+        margin-left: 8px;
+    }
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+#type option[value="fire"]:hover,
+#weakness-type option[value="fire"]:hover,
+#resistance-type option[value="fire"]:hover {
+    background-color: #ff7675;
+}
+
+#type option[value="water"]:hover,
+#weakness-type option[value="water"]:hover,
+#resistance-type option[value="water"]:hover {
+    background-color: #74b9ff;
+}
+
+#type option[value="grass"]:hover,
+#weakness-type option[value="grass"]:hover,
+#resistance-type option[value="grass"]:hover {
+    background-color: #55efc4;
+}
+
+@media (max-width: 480px) {
+    .form-card {
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+    70% { box-shadow: 0 0 0 5px rgba(231, 76, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+}
+
+.lab-inp input:focus,
+.lab-inp select:focus,
+.lab-inp textarea:focus {
+    animation: pulse 1.5s infinite;
+}

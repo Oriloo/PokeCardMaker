@@ -1,0 +1,48 @@
+/* Futura PT (Heavy) */
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../font/Futura_PT_Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Futura PT (Medium) */
+@font-face {
+    font-family: 'FuturaPT';
+    src: url('../font/Futura_PT_Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Gill Sans Std (Regular) */
+@font-face {
+    font-family: 'GillSansStd';
+    src: url('../font/GillSansStd.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Gill Sans Std (Bold) */
+@font-face {
+    font-family: 'GillSansStd';
+    src: url('../font/GillSansStdBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Gill Sans Std (Bold Condensed) */
+@font-face {
+    font-family: 'GillSansStd';
+    src: url('../font/GillSansStdBoldCondensed.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: condensed;
+}
+
+/* Gill Sans Std (Italic) */
+@font-face {
+    font-family: 'GillSansStd';
+    src: url('../font/GillSansStdItalic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}

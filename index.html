@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Poke Card</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/fonts.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/form.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/pokemon-card.css">
+    <script src="https://unpkg.com/dom-to-image-more/dist/dom-to-image-more.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- FORMULAIRE -->
+    <div class="form-card">
+        <form>
+            <h2>Card Editor</h2>
+            <div class="lab-inp">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" value="Smeargle">
+            </div>
+            <div class="lab-inp">
+                <label for="hp">HP:</label>
+                <input type="text" name="hp" id="hp" value="HP">
+            </div>
+            <div class="lab-inp">
+                <label for="hp-nb">Life:</label>
+                <input type="number" name="hp-nb" id="hp-nb" value="70">
+            </div>
+            <div class="lab-inp">
+                <label for="type">Type:</label>
+                <select name="type" id="type">
+                    <option value="normal" selected>Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="grass">Grass</option>
+                    <option value="water">Water</option>
+                    <option value="lightning">Lightning</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="metal">Metal</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="darkness">Darkness</option>
+                </select>
+            </div>
+            <div class="lab-inp">
+                <label for="image">Image:</label>
+                <input type="file" name="image" id="image">
+            </div>
+            <div class="lab-inp">
+                <label for="info">Info:</label>
+                <input type="text" name="info" id="info"
+                       value="NO. 235 Painter Pokémon HT: 3´11´´ WT: 127.9 lbs.">
+            </div>
+            <hr/>
+            <div class="lab-inp">
+                <label for="nomber-atk">Number of attacks:</label>
+                <input type="number" name="nomber-atk" id="nomber-atk" min="0" max="4" value="2">
+            </div>
+            <div id="attacks-container"></div>
+            <hr/>
+            <div class="lab-inp">
+                <label for="weakness">Weakness:</label>
+                <input type="text" name="weakness" id="weakness" value="weakness">
+            </div>
+            <div class="lab-inp">
+                <label for="weakness-type">Weakness Type:</label>
+                <select name="weakness-type" id="weakness-type">
+                    <option value="normal">Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="grass">Grass</option>
+                    <option value="water">Water</option>
+                    <option value="lightning">Lightning</option>
+                    <option value="fighting" selected>Fighting</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="metal">Metal</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="darkness">Darkness</option>
+                </select>
+            </div>
+            <div class="lab-inp">
+                <label for="weakness-value">Weakness Value:</label>
+                <input type="number" name="weakness-value" id="weakness-value" min="0" value="2">
+            </div>
+            <hr/>
+            <div class="lab-inp">
+                <label for="resistance">Resistance:</label>
+                <input type="text" name="resistance" id="resistance" value="resistance">
+            </div>
+            <div class="lab-inp">
+                <label for="resistance-type">Resistance Type :</label>
+                <select name="resistance-type" id="resistance-type">
+                    <option value="normal" selected>Normal</option>
+                    <option value="fire">Fire</option>
+                    <option value="grass">Grass</option>
+                    <option value="water">Water</option>
+                    <option value="lightning">Lightning</option>
+                    <option value="fighting">Fighting</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="metal">Metal</option>
+                    <option value="dragon">Dragon</option>
+                    <option value="darkness">Darkness</option>
+                </select>
+            </div>
+            <div class="lab-inp">
+                <label for="resistance-value">Resistance Value:</label>
+                <input type="number" name="resistance-value" id="resistance-value" min="0" value="30">
+            </div>
+            <hr/>
+            <div class="lab-inp">
+                <label for="retreat">Retreat:</label>
+                <input type="text" name="retreat" id="retreat" value="retreat">
+            </div>
+            <div class="lab-inp">
+                <label for="retreat-cost">Retreat Cost:</label>
+                <input type="number" name="retreat-cost" id="retreat-cost" min="0" max="5" value="2">
+            </div>
+            <hr/>
+            <div class="lab-inp">
+                <label for="illustrator">Illustrator:</label>
+                <input type="text" name="illustrator" id="illustrator" value="Illus.Mizue">
+            </div>
+            <div class="lab-inp">
+                <label for="extension">Extension:</label>
+                <input type="file" name="extension" id="extension">
+            </div>
+            <div class="lab-inp">
+                <label for="regulation">Regulation:</label>
+                <select name="regulation" id="regulation">
+                    <option value="f" selected>F</option>
+                    <option value="e">E</option>
+                    <option value="d">D</option>
+                </select>
+            </div>
+            <div class="lab-inp">
+                <label for="numbering">Numbering:</label>
+                <input type="text" name="numbering" id="numbering" value="137/195">
+            </div>
+            <div class="lab-inp">
+                <label for="rarity">Rarity:</label>
+                <select name="rarity" id="rarity">
+                    <option value="common" selected>Common</option>
+                    <option value="uncommon">Uncommon</option>
+                    <option value="rare">Rare</option>
+                    <option value="legend">Legend</option>
+                </select>
+            </div>
+            <div class="lab-inp">
+                <label for="description">Description:</label>
+                <textarea name="description" id="description">it draws symbols with the fluid that oozes from the tip of its tail. Depending on the symbol, Smeargle fanatics will pay big money for them</textarea>
+            </div>
+            <div class="btn">
+                <button type="button" id="export">Export Card</button>
+                <button type="button" id="save">Save Card</button>
+                <button type="button" id="load">Load Card</button>
+                <button type="button" id="reset">Reset Card</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- CARTE POKÉMON -->
+    <div class="pokemon-card">
+        <div class="border-card">
+            <div class="card">
+                <div class="gradient">
+                    <div class="gradient-bg"></div>
+                    <div class="gradient-filter"></div>
+                </div>
+                <div class="card-details">
+                    <div class="card-header">
+                        <div class="basic">
+                            <img src="assets/BASIC.png" alt="BASIC">
+                        </div>
+                        <div class="name">
+                            <span class="name-text" id="form-name"></span>
+                        </div>
+                        <div class="life">
+                            <span class="life-text" id="form-hp"></span>
+                            <span class="life-value" id="form-hp-nb"></span>
+                        </div>
+                        <div class="type" id="form-type">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-image">
+                            <div class="card-image-bg" id="form-image">
+                                <img src="assets/smeargle.png" alt="Pokemon">
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-info-header">
+                                <img src="assets/bar1.png" alt="">
+                                <span class="bar1-text" id="form-info"></span>
+                            </div>
+                            <div class="card-info-body">
+                                <div class="list-attack">
+                                    <div class="attack attack1">
+                                        <div class="attack-header">
+                                            <div class="attack-type" id="form-cost-atk1"></div>
+                                            <span class="attack-name" id="form-name-atk1"></span>
+                                            <span class="attack-damage" id="form-damage-atk1"></span>
+                                        </div>
+                                        <div class="attack-body">
+                                            <span class="attack-text" id="form-description-atk1"></span>
+                                        </div>
+                                    </div>
+                                    <div class="attack attack2">
+                                        <div class="attack-header">
+                                            <div class="attack-type" id="form-cost-atk2"></div>
+                                            <span class="attack-name" id="form-name-atk2"></span>
+                                            <span class="attack-damage" id="form-damage-atk2"></span>
+                                        </div>
+                                        <div class="attack-body">
+                                            <span class="attack-text" id="form-description-atk2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="attack attack3">
+                                        <div class="attack-header">
+                                            <div class="attack-type" id="form-cost-atk3"></div>
+                                            <span class="attack-name" id="form-name-atk3"></span>
+                                            <span class="attack-damage" id="form-damage-atk3"></span>
+                                        </div>
+                                        <div class="attack-body">
+                                            <span class="attack-text" id="form-description-atk3"></span>
+                                        </div>
+                                    </div>
+                                    <div class="attack attack4">
+                                        <div class="attack-header">
+                                            <div class="attack-type" id="form-cost-atk4"></div>
+                                            <span class="attack-name" id="form-name-atk4"></span>
+                                            <span class="attack-damage" id="form-damage-atk4"></span>
+                                        </div>
+                                        <div class="attack-body">
+                                            <span class="attack-text" id="form-description-atk4"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-info-footer">
+                                <div class="footer-top">
+                                    <div class="footer-top-left">
+                                        <img src="assets/bar2-1.png" alt="">
+                                        <div class="inside">
+                                            <div class="inside-left">
+                                                <span class="text" id="form-weakness"></span>
+                                                <img src="" alt="Type" id="form-weakness-type">
+                                                <span class="multiplier">x</span>
+                                                <span class="value" id="form-weakness-value"></span>
+                                            </div>
+                                            <div class="inside-right">
+                                                <span class="text" id="form-resistance"></span>
+                                                <img src="" alt="Type" id="form-resistance-type">
+                                                <span class="subtracter">-</span>
+                                                <span class="value" id="form-resistance-value"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer-top-right">
+                                        <img src="assets/bar2-2.png" alt="">
+                                        <div class="inside">
+                                            <span class="text" id="form-retreat"></span>
+                                            <div class="energy" id="form-retreat-cost"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer-bottom">
+                                    <div class="footer-left">
+                                        <div class="footer-left-top">
+                                            <span class="footer-text" id="form-illustrator"></span>
+                                        </div>
+                                        <div class="footer-left-bottom">
+                                            <div class="symbol" id="form-extension">
+                                                <img src="assets/Silver_Tempest_Sword_and_Shield_Symbol_TCG.png" alt="symbol">
+                                            </div>
+                                            <img class="regulation" src="" alt="regulation" id="form-regulation">
+                                            <span class="rarity-text" id="form-numbering"></span>
+                                            <img class="rarity-symbol" src="" alt="rarity" id="form-rarity">
+                                        </div>
+                                    </div>
+                                    <div class="footer-right">
+                                        <span class="footer-text" id="form-description"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span>©2025 / GitHub - Oriloo / Figma - @andersbothmann</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <span>GitHub - <a href="https://github.com/Oriloo">Oriloo</a></span>
+    <span>/</span>
+    <span>Figma - <a href="https://www.figma.com/community/file/1223615632548850776">@andersbothmann</a></span>
+</footer>
+
+<script src="script.js"></script>
+<script type="module" src="actions.js"></script>
+</body>
+</html>
