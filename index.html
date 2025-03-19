@@ -59,6 +59,11 @@
             <div id="attacks-container"></div>
             <hr/>
             <div class="lab-inp">
+                <input type="checkbox" name="display-footer" id="display-footer" checked>
+                <label for="display-footer">Display Footer</label>
+            </div>
+            <div id="form-footer">
+            <div class="lab-inp">
                 <label for="weakness">Weakness:</label>
                 <input type="text" name="weakness" id="weakness" value="weakness">
             </div>
@@ -148,6 +153,7 @@
                 <label for="description">Description:</label>
                 <textarea name="description" id="description">it draws symbols with the fluid that oozes from the tip of its tail. Depending on the symbol, Smeargle fanatics will pay big money for them</textarea>
             </div>
+            </div>
             <div class="btn">
                 <button type="button" id="export">Export Card</button>
                 <button type="button" id="save">Save Card</button>
@@ -192,7 +198,7 @@
                                 <img src="assets/bar1.png" alt="">
                                 <span class="bar1-text" id="form-info"></span>
                             </div>
-                            <div class="card-info-body">
+                            <div class="card-info-body" id="card-body">
                                 <div class="list-attack">
                                     <div class="attack attack1">
                                         <div class="attack-header">
@@ -237,7 +243,7 @@
                                 </div>
                             </div>
 
-                            <div class="card-info-footer">
+                            <div class="card-info-footer" id="card-footer">
                                 <div class="footer-top">
                                     <div class="footer-top-left">
                                         <img src="assets/bar2-1.png" alt="">

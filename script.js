@@ -353,4 +353,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     attackCountInput.addEventListener("input", updateAttackCount);
     updateAttackCount();
+
+    const displayFooterCheckbox = document.getElementById("display-footer");
+    const cardFooter = document.getElementById("card-footer");
+    const cardBody = document.getElementById("card-body");
+    const formFooter = document.getElementById("form-footer");
+
+    if (displayFooterCheckbox && cardFooter && cardBody) {
+        /**
+         * Gère l'affichage du footer et ajuste la hauteur du corps de la carte
+         */
+        function toggleFooterDisplay() {
+            if (displayFooterCheckbox.checked) {
+                formFooter.style.display = "block";
+                cardFooter.style.display = "block";
+                cardBody.style.height = "";
+            } else {
+                formFooter.style.display = "none";
+                cardFooter.style.display = "none";
+                cardBody.style.height = "260px";
+            }
+        }
+
+        toggleFooterDisplay();
+        displayFooterCheckbox.addEventListener("change", toggleFooterDisplay);
+    }
 });
