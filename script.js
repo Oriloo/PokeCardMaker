@@ -378,4 +378,22 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleFooterDisplay();
         displayFooterCheckbox.addEventListener("change", toggleFooterDisplay);
     }
+
+    const attackFontSizeInput = document.getElementById("size-atk-description-font");
+    const attackTextElements = document.querySelectorAll(".attack-text");
+
+    if (attackFontSizeInput && attackTextElements.length > 0) {
+        /**
+         * Met à jour la taille de police de toutes les descriptions d'attaque
+         */
+        function updateAttackFontSize() {
+            const fontSize = attackFontSizeInput.value || 15;
+            attackTextElements.forEach(element => {
+                element.style.fontSize = `${fontSize}px`;
+            });
+        }
+
+        updateAttackFontSize();
+        attackFontSizeInput.addEventListener("input", updateAttackFontSize);
+    }
 });
