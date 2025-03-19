@@ -189,3 +189,40 @@ button#save:hover, button#export:hover, .add-energy-btn:hover {
 .lab-inp textarea:focus {
     animation: pulse 1.5s infinite;
 }
+
+/* Style pour les checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+}
+input[type="checkbox"]:checked {
+    background-color: #0366d6;
+    border-color: #0366d6;
+}
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+input[type="checkbox"] + label {
+    cursor: pointer;
+    vertical-align: middle;
+}
+.lab-inp:has(input[type="checkbox"]) {
+    display: block;
+}
