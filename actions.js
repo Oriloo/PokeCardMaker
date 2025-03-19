@@ -278,12 +278,14 @@ document.addEventListener("DOMContentLoaded", function () {
             energyTypes.forEach(et => {
                 const opt = document.createElement("option");
                 opt.value = et.value;
+                opt.setAttribute("data-i18n", "types." + et.value);
                 opt.textContent = et.label;
                 select.appendChild(opt);
             });
             select.value = val;
             const removeBtn = document.createElement("button");
             removeBtn.type = "button";
+            removeBtn.setAttribute("data-i18n", "atk.cost.remove");
             removeBtn.textContent = "Retirer";
             removeBtn.addEventListener("click", () => {
                 container.remove();

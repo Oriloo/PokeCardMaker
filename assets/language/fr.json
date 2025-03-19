@@ -1,0 +1,68 @@
+{
+  "page-title": "Créateur de Cartes Pokémon",
+  "title": "Éditeur de Carte",
+  "name": "Nom :",
+  "hp": "Points de vie (PV) :",
+  "life": "Vie :",
+  "types": {
+    "title": "Type :",
+    "normal": "Normal",
+    "fire": "Feu",
+    "grass": "Plante",
+    "water": "Eau",
+    "lightning": "Éclair",
+    "fighting": "Combat",
+    "psychic": "Psy",
+    "metal": "Métal",
+    "dragon": "Dragon",
+    "darkness": "Ténèbres"
+  },
+  "image": "Image :",
+  "info": "Infos :",
+  "atk": {
+    "number": "Nombre d'attaques :",
+    "title": "Attaque",
+    "cost": {
+      "title": "Coût :",
+      "remove": "Retirer",
+      "add": "Ajouter énergie"
+    },
+    "name": "Nom :",
+    "damage": "Dégâts :",
+    "description": {
+      "title": "Description :",
+      "font-size": "Taille de police de la description :"
+    }
+  },
+  "display-footer": "Afficher le bas de la carte",
+  "weakness": {
+    "title": "Faiblesse :",
+    "type": "Type de faiblesse :",
+    "value": "Valeur de faiblesse :"
+  },
+  "resistance": {
+    "title": "Résistance :",
+    "type": "Type de résistance :",
+    "value": "Valeur de résistance :"
+  },
+  "retreat": {
+    "title": "Retraite :",
+    "cost": "Coût de retraite :"
+  },
+  "illustrator": "Illustrateur :",
+  "extension": "Extension :",
+  "regulation": "Réglement :",
+  "numbering": "Numérotation :",
+  "rarity": {
+    "title": "Rareté :",
+    "common": "Commun",
+    "uncommon": "Peu commun",
+    "rare": "Rare",
+    "legend": "Légendaire"
+  },
+  "description": "Description :",
+  "export": "Exporter la carte",
+  "save": "Enregistrer la carte",
+  "load": "Charger la carte",
+  "reset": "Réinitialiser la carte"
+}

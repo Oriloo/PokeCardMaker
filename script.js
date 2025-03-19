@@ -193,22 +193,22 @@ document.addEventListener("DOMContentLoaded", function () {
         div.classList.add("attack-config");
         div.id = `attack-config-${n}`;
         div.innerHTML = `
-          <h3>Attack ${n}</h3>
+          <h3><span data-i18n="atk.title">Attack</span> <span>${n}</span></h3>
           <div class="lab-inp" id="attack${n}-cost-container">
-            <label>Cost:</label>
+            <label data-i18n="atk.cost.title">Cost:</label>
             <div id="attack${n}-cost-list"></div>
-            <button type="button" class="add-energy-btn" data-attack="${n}">Add energy</button>
+            <button type="button" class="add-energy-btn" data-attack="${n}" data-i18n="atk.cost.add">Add energy</button>
           </div>
           <div class="lab-inp">
-            <label for="attack${n}-name">Name:</label>
+            <label for="attack${n}-name" data-i18n="atk.name">Name:</label>
             <input type="text" id="attack${n}-name" value="${defName}">
           </div>
           <div class="lab-inp">
-            <label for="attack${n}-damage">Damage:</label>
+            <label for="attack${n}-damage" data-i18n="atk.damage">Damage:</label>
             <input type="number" id="attack${n}-damage" value="${defDmg}">
           </div>
           <div class="lab-inp">
-            <label for="attack${n}-desc">Description:</label>
+            <label for="attack${n}-desc" data-i18n="atk.description.title">Description:</label>
             <input type="text" id="attack${n}-desc" value="${defDesc}">
           </div>
           <hr/>
@@ -268,11 +268,13 @@ document.addEventListener("DOMContentLoaded", function () {
         energyTypes.forEach(et => {
             const opt = document.createElement("option");
             opt.value = et.value;
+            opt.setAttribute("data-i18n", "types." + et.value);
             opt.textContent = et.label;
             select.appendChild(opt);
         });
         const removeBtn = document.createElement("button");
         removeBtn.type = "button";
+        removeBtn.setAttribute("data-i18n", "atk.cost.remove");
         removeBtn.textContent = "Remove";
         removeBtn.addEventListener("click", () => {
             container.remove();

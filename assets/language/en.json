@@ -1,0 +1,68 @@
+{
+  "page-title": "Poke Card Maker",
+  "title": "Card Editor",
+  "name": "Name:",
+  "hp": "Hit points (HP):",
+  "life": "Life:",
+  "types": {
+    "title": "Type:",
+    "normal": "Normal",
+    "fire": "Fire",
+    "grass": "Grass",
+    "water": "Water",
+    "lightning": "Lightning",
+    "fighting": "Fighting",
+    "psychic": "Psychic",
+    "metal": "Metal",
+    "dragon": "Dragon",
+    "darkness": "Darkness"
+  },
+  "image": "Image:",
+  "info": "Info:",
+  "atk": {
+    "number": "Number of attacks:",
+    "title": "Attack",
+    "cost": {
+      "title": "Cost:",
+      "remove": "Remove",
+      "add": "Add energy"
+    },
+    "name": "Name:",
+    "damage": "Damage:",
+    "description": {
+      "title": "Description:",
+      "font-size": "Font size of the attack description:"
+    }
+  },
+  "display-footer": "Display footer",
+  "weakness": {
+    "title": "Weakness:",
+    "type": "Weakness Type:",
+    "value": "Weakness Value:"
+  },
+  "resistance": {
+    "title": "Resistance:",
+    "type": "Resistance Type:",
+    "value": "Resistance Value:"
+  },
+  "retreat": {
+    "title": "Retreat:",
+    "cost": "Retreat cost:"
+  },
+  "illustrator": "Illustrator:",
+  "extension": "Extension:",
+  "regulation": "Regulation:",
+  "numbering": "Numbering:",
+  "rarity": {
+    "title": "Rarity:",
+    "common": "Common",
+    "uncommon": "Uncommon",
+    "rare": "Rare",
+    "legend": "Legend"
+  },
+  "description": "Description:",
+  "export": "Export card",
+  "save": "Save card",
+  "load": "Load card",
+  "reset": "Reset card"
+}
