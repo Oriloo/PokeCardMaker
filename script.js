@@ -392,6 +392,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const fontSize = attackFontSizeInput.value || 15;
             attackTextElements.forEach(element => {
                 element.style.fontSize = `${fontSize}px`;
+                element.style.lineHeight = `${fontSize}px`;
             });
         }
 
